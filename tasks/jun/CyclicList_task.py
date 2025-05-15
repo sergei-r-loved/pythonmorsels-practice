@@ -1,4 +1,3 @@
-from typing import List
 class CyclicList():
 
     def __init__(self, sequence) -> None:
@@ -13,6 +12,12 @@ class CyclicList():
         for _ in self.sequence:
             self.lenth += 1
         return self.lenth
+
+    def __getitem__(self, index):
+        for i, n in enumerate(self.sequence):
+            self.value = self.sequence[0]
+            if i == index:
+                return self.value
 
     def __str__(self) -> str:
         return f"{self.sequence}"
@@ -52,5 +57,6 @@ print(my_list)
 print(my_list.pop(0))
 print(my_list)
 print(my_list.pop(-2))
-
+print(my_list)
+print(my_list[3])
 # test_list = [1, 2, 3, 5]
